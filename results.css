@@ -1,0 +1,47 @@
+.clear {
+    clear: both;
+}
+
+h1, h2, h3 {
+    font-family: Verdana, sans-serif;
+    padding: 0.4em;
+}
+
+h2 {
+    margin-top: 2em;
+    background-color: #eee;
+}
+
+
+.graph, .response-summary-table {
+    float: left;
+    margin-bottom: 50px;
+}
+
+.graph {
+    position: relative;
+    width: 60%;
+}
+
+.response-summary-table {
+    font-size: 75%;
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+}
+
+.table-label, .table-number, .table-percentage {
+    padding-bottom: .5em;
+    vertical-align: top;
+}
+
+.table-number {
+    font-weight: bold;
+}
+
+.table-percentage {
+    color: #666;
+}
+
+.table-number, .table-percentage {
+    padding-left: 1.38em;
+}
