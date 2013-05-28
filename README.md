@@ -10,3 +10,10 @@ galton by cloning it onto `~/quicklisp/local-projects/` followed
 by `(load "~/quicklisp/local-projects/galton/examples/questionnaire.lisp")`.
 
 Tested with threaded SBCL 1.1.7 on OS X and ACL 9.0 SMP on Windows.
+
+Screenshots
+-----------
+
+![Form](http://i.imgur.com/NGoQXr9.png)
+
+![Results](http://i.imgur.com/ijt2PtN.png)
