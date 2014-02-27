@@ -18,14 +18,16 @@
 
 (defun run (form &rest args &key (port 8080))
   ;; ew...
-  (setf *form* (maptree #'cleanup-whitespace form))
-  (setf *results* (with-open-file (in (form :output) :if-does-not-exist nil)
-                    (read in)))
-  (setf *results-lock* (bt:make-lock "results lock"))
   (setf *default-pathname-defaults*
         (make-pathname :name nil
                        :type nil
                        :defaults (asdf:system-definition-pathname :galton)))
+  (setf *form* (maptree #'cleanup-whitespace form))
+  (setf *results* (with-open-file (in (form :output)
+                                      :if-does-not-exist nil
+                                      :external-format :utf-8)
+                    (read in)))
+  (setf *results-lock* (bt:make-lock "results lock"))
   (apply #'start :galton
          :port port
          :acceptor-class 'logging-acceptor

@@ -112,7 +112,8 @@
                 :response (hunchentoot:post-parameters*))
           *results*)
     (with-open-file (out (form :output) :direction :output
-                                        :if-exists :supersede)
+                                        :if-exists :supersede
+                                        :external-format :utf-8)
       (print *results* out)))
   (redirect 'results))
 
