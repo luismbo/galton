@@ -26,7 +26,8 @@
   (setf *results* (with-open-file (in (form :output)
                                       :if-does-not-exist nil
                                       :external-format :utf-8)
-                    (read in)))
+                    (when in
+                      (read in))))
   (setf *results-lock* (bt:make-lock "results lock"))
   (apply #'start :galton
          :port port
