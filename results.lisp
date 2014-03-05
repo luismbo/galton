@@ -41,8 +41,9 @@
                              (cdr pair))
                          answers
                          0)))))
-    (iter (for (answer count) :in-hashtable answers)
-          (collect (list answer count)))))
+    (sort (iter (for (answer count) :in-hashtable answers)
+                (collect (list answer count)))
+          #'>= :key #'second)))
 
 (defmethod make-json-data ((type (eql :section)) question)
   (jso "type" "section" "title" (question-getf question :title)))
